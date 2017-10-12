@@ -6,24 +6,26 @@
   </ion-header>
 
   <ion-content>
-    「{{text}}」
+    <button (click)="loadShowText()">
+    「{{showText}}」
+    </button>
     <ion-list>
-      <p *ngIf="text == 'Page1'">
+      <p *ngIf="showText == 'Page1'">
         <button menuClose ion-item *ngFor="let p of page1" (click)="openPage(p)">
           {{p.title}}
         </button>
       </p>
-      <p *ngIf="text == 'Page2'">
+      <p *ngIf="showText == 'Page2'">
         <button menuClose ion-item *ngFor="let p of page2" (click)="openPage(p)">
           {{p.title}}
         </button>
       </p>
-      <p *ngIf="text == 'Page3'">
+      <p *ngIf="showText == 'Page3'">
         <button menuClose ion-item *ngFor="let p of page3" (click)="openPage(p)">
           {{p.title}}
         </button>
       </p>
-      <p *ngIf="text == 'Page4'">
+      <p *ngIf="showText == 'Page4'">
         <button menuClose ion-item *ngFor="let p of page4" (click)="openPage(p)">
           {{p.title}}
         </button>

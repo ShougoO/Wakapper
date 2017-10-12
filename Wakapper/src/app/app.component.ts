@@ -15,54 +15,49 @@ import { Page4 } from '../pages/page4/page4';
 })
 
 export class MyApp {
-  text: string;
+  static text: string;
+  showText: string;
   
   @ViewChild(Nav) nav: Nav;
-
+  
   rootPage: any = HomePage;
   
-  page1: Array<{ title: string, component: any }>;
-  page2: Array<{ title: string, component: any }>;
-  page3: Array<{ title: string, component: any }>;
-  page4: Array<{ title: string, component: any }>;
+  page1: Array<{ title: string, component: any, name: string }>;
+  page2: Array<{ title: string, component: any, name: string }>;
+  page3: Array<{ title: string, component: any, name: string }>;
+  page4: Array<{ title: string, component: any, name: string }>;
 
   constructor(public platform: Platform) {
     this.initializeApp();
     
-    var input = document.getElementsByTagName('p')[0];
-    if(input == undefined){
-      this.text = document.location.toString();
-    }else{
-      this.text = input.tagName;
-    }
     
     // used for an example of ngFor and navigation
     this.page1 = [
-      { title: 'Home Page' , component: HomePage },
-      { title: 'Page Two'  , component: Page2 },
-      { title: 'Page Three', component: Page3 },
-      { title: 'Page Four' , component: Page4 }
+        { title: 'Home Page' , component: HomePage, name: 'HomePage' },
+        { title: 'Page Two', component: Page2, name: 'Page2' },
+        { title: 'Page Three', component: Page3, name: 'Page3' },
+        { title: 'Page Four', component: Page4, name: 'Page4' }
     ];
 
     this.page2 = [
-        { title: 'Home Page' , component: HomePage },
-        { title: 'Page One'  , component: Page1 },
-        { title: 'Page Three', component: Page3 },
-        { title: 'Page Four' , component: Page4 }
+        { title: 'Home Page', component: HomePage, name: 'HomePage' },
+        { title: 'Page One', component: Page1, name: 'Page1' },
+        { title: 'Page Three', component: Page3, name: 'Page3' },
+        { title: 'Page Four', component: Page4, name: 'Page4' }
     ];
 
     this.page3 = [
-        { title: 'Home Page', component: HomePage },
-        { title: 'Page One' , component: Page1 },
-        { title: 'Page Two' , component: Page2 },
-        { title: 'Page Four', component: Page4 }
+        { title: 'Home Page', component: HomePage, name: 'HomePage' },
+        { title: 'Page One', component: Page1, name: 'Page1' },
+        { title: 'Page Two', component: Page2, name: 'Page2' },
+        { title: 'Page Four', component: Page4, name: 'Page4' }
     ];
 
     this.page4 = [
-        { title: 'Home Page' , component: HomePage },
-        { title: 'Page One'  , component: Page1 },
-        { title: 'Page Two'  , component: Page2 },
-        { title: 'Page Three', component: Page3 }
+        { title: 'Home Page', component: HomePage, name: 'HomePage' },
+        { title: 'Page One', component: Page1, name: 'Page1' },
+        { title: 'Page Two', component: Page2, name: 'Page2' },
+        { title: 'Page Three', component: Page3, name: 'Page3' }
     ];
   }
 
@@ -76,8 +71,16 @@ export class MyApp {
   }
 
   openPage(page) {
+    MyApp.text = page.name;
+    //デバッグ用
+    //alert(MyApp.text);
+
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component, { text: page.title });
+  }
+
+  loadShowText() {
+      this.showText = MyApp.text;
   }
 }
