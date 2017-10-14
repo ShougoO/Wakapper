@@ -6,9 +6,7 @@
   </ion-header>
 
   <ion-content>
-    <button (click)="loadShowText()">
     「{{showText}}」
-    </button>
     <ion-list>
       <p *ngIf="showText == 'Page1'">
         <button menuClose ion-item *ngFor="let p of page1" (click)="openPage(p)">
@@ -31,6 +29,8 @@
         </button>
       </p>
     </ion-list>
+
+    <button (click)="loadShowText()">表示されない時</button>
   </ion-content>
 
 </ion-menu>

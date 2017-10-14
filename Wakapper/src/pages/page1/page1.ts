@@ -7,7 +7,7 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-page1',
   templateUrl: 'page1.html'
 })
-export class Page1{
+export class Page1 {
   text: string;
   showText: string;
   selectedItem: any;
@@ -20,7 +20,7 @@ export class Page1{
     
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
-
+    
     // Let's populate this page with some filler content for funzies
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
