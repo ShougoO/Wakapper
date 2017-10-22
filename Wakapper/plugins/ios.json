@@ -1,0 +1,40 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "io.cordova.myapp7780d9"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.cordova.myapp7780d9"
+        },
+        "cordova-plugin-googlemaps": {
+            "API_KEY_FOR_IOS": "AIzaSyDSi0qYoYSxKxTHClb0CKz593TqDMyHYEs",
+            "LOCATION_WHEN_IN_USE_DESCRIPTION": "Show your location on the map",
+            "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Trace your location on the map",
+            "PACKAGE_NAME": "io.cordova.myapp7780d9"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.cordova.myapp7780d9"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "io.cordova.myapp7780d9"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.myapp7780d9"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "io.cordova.myapp7780d9"
+        }
+    },
+    "dependent_plugins": {
+        "com.googlemaps.ios": {
+            "PACKAGE_NAME": "io.cordova.myapp7780d9"
+        }
+    }
+}
