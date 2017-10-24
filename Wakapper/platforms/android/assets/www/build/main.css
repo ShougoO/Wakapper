@@ -22277,9 +22277,8 @@ page-home button {
   }
 }
 
-page-page1 #map_canvas {
-  width: 50%;
+page-page1 #map {
+  width: 70%;
   height: 50%;
-  border: 1px solid #999;
-  margin: 10px;
+  margin: 20px;
 }

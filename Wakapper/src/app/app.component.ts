@@ -74,7 +74,7 @@ export class MyApp {
       this.dataService.Text$.subscribe(text => {
           if (text == "Page01") {
               this.showText = "Page1";
-              this.nav.setRoot(Page1, { lat: 135.0, lng: 70.0 });
+              this.nav.setRoot(Page1, { lat: 130, lng: 33 });
 
           } else if (text == "Page02") {
               this.showText = "Page2";
@@ -91,7 +91,7 @@ export class MyApp {
           } else {
             this.showText = text;
             if (text == "Page1") {
-              this.nav.setRoot(Page1, { lat: 135.0, lng: 70.0 });
+              this.nav.setRoot(Page1, { lat: 130, lng: 33 });
             } else {
               this.nav.setRoot(this.page.component, { text });
             }

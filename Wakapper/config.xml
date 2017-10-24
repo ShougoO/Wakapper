@@ -99,4 +99,5 @@
     <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDSi0qYoYSxKxTHClb0CKz593TqDMyHYEs" />
     <variable name="API_KEY_FOR_IOS" value="AIzaSyDSi0qYoYSxKxTHClb0CKz593TqDMyHYEs" />
   </plugin>
+  <plugin name="com.googlemaps.ios" spec="~2.4.0" />
 </widget>

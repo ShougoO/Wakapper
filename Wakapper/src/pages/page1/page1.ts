@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import {
@@ -11,47 +11,40 @@ import {
   Marker
 } from '@ionic-native/google-maps';
 
+declare var google;
+
 @Component({
   selector: 'page-page1',
   templateUrl: 'page1.html'
 })
 export class Page1 {
+  @ViewChild("map") mapChild;
   map: GoogleMap;
   mapElement: HTMLElement;
+  
   lat: number;
   lng: number;
 
   text: string;
   showText: string;
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, private googleMaps: GoogleMaps) {
     this.text = navParams.get("text");
     this.lat = navParams.get("lat");
     this.lng = navParams.get("lng");
-    alert(this.lat);
-    alert(this.lng);
     this.showText = this.text;
   }
 
-  ionViewDidLoad(){
+  ionViewDidLoad() {
     this.loadMap();
   }
 
   loadMap() {
-    this.mapElement = document.getElementById('map_canvas');
-    let mapOptions: GoogleMapOptions = {
-      camera: {
-        target: {
-          lat: this.lat,
-          lng: this.lng
-        },
-        zoom: 18,
-        tilt: 30
-      }
-    };
-    this.map = this.googleMaps.create(this.mapElement, mapOptions);
-    alert('created');
-
+    this.map = new google.maps.Map(this.mapChild.nativeElement, {
+      zoom: 12,
+      center: { lat: 33.9, lng: 130.8 }
+    });
+    /*
     // Wait the MAP_READY before using any methods.
     this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
       alert('Map is ready!');
@@ -71,5 +64,6 @@ export class Page1 {
         });
       });
     });
+    */
   }
 }
