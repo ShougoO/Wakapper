@@ -43,16 +43,33 @@ export class Page3 {
 
     // カレンダーを出力します。
     var el = this.calendarElement.nativeElement;
+    var TABLE = "<TABLE border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\">" + "<TR><TD bgcolor=\"#0000ff\" width= \"1\" colspan= \"7\" > </TD></TR>";
+    var TR = "<TR>";
+    var TD1 = "<TD bgcolor=\"#0000ff\" width=\"1\" height=\"1\"></TD><TD>";
+    var TD2 = "<TD bgcolor=\"#0000ff\" width=\"1\" height=\"1\"></TD></TR><TR><TD bgcolor=\"#0000ff\" width=\"1\" colspan=\"7\" > </TD> </TR>";
+    var TABLEEND = "</TABLE>";
+    var msg = "";
     //var el = document.getElementById('content');
+    //el.innerHTML += "<TABLE border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"left\">";
+    //el.innerHTML += "<TR><TD bgcolor=\"#0000ff\" width= \"1\" colspan= \"7\" > </TD></TR>";
+    msg += TABLE;
+    
     for (var curDay: number = -prePad + 1; curDay <= lastDay; curDay++) {
-
+      if ((prePad + curDay) % 7 == 1) {
+        msg += TR;
+      }
       // 半角スペース1つ出力します。curDayが負の時はさらに2つ出力します。
-      el.innerHTML += "&nbsp;" + (curDay < 1 ? "&nbsp;&nbsp;" :
+      msg += TD1 + "&nbsp;" + (curDay < 1 ? "&nbsp;&nbsp;" :
         // curDayが正の時です。1桁なら半角スペースを1つ出力します。そして日付を出力します。
-        (curDay < 10 ? "&nbsp;" : "") + curDay.toString() +
+        (curDay < 10 ? "&nbsp;" : "") + curDay.toString() + "</TD>" +
         // 土曜日を出力したら、改行タグを入れます。
-        (((prePad + curDay) % 7 == 0) ? "<br/>" : ""));
+        //(((prePad + curDay) % 7 == 0) ? "<br/>" : ""));
+        (((prePad + curDay) % 7 == 0) ? TD2 : ""));
+      alert('aaa');
     }
+    msg += TD2 + TABLEEND;
+    alert('bbb');
+    el.innerHTML += msg;
   }
 
   itemTapped(event, item) {
