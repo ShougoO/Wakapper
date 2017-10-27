@@ -22276,3 +22276,14 @@ page-home button {
     -webkit-transform: rotate(360deg);
   }
 }
+
+page-page3 #content {
+  font-size: 20pt;
+  height: 180px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  border-radius: 10px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ffd800;
+}

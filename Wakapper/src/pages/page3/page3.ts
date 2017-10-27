@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -7,6 +7,8 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'page3.html'
 })
 export class Page3 {
+  @ViewChild('content') calendarElement;
+
   text: string;
   showText: string;
   selectedItem: any;
@@ -31,6 +33,25 @@ export class Page3 {
         note: 'This is item #' + i,
         icon: this.icons[Math.floor(Math.random() * this.icons.length)]
       });
+    }
+  }
+  ionViewDidLoad() {
+    // 現在日を取得し、当月1日の曜日と末日を求めます。
+    var now: Date = new Date();
+    var prePad: number = new Date(now.getFullYear(), now.getMonth(), 1).getDay();
+    var lastDay: number = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+
+    // カレンダーを出力します。
+    var el = this.calendarElement.nativeElement;
+    //var el = document.getElementById('content');
+    for (var curDay: number = -prePad + 1; curDay <= lastDay; curDay++) {
+
+      // 半角スペース1つ出力します。curDayが負の時はさらに2つ出力します。
+      el.innerHTML += "&nbsp;" + (curDay < 1 ? "&nbsp;&nbsp;" :
+        // curDayが正の時です。1桁なら半角スペースを1つ出力します。そして日付を出力します。
+        (curDay < 10 ? "&nbsp;" : "") + curDay.toString() +
+        // 土曜日を出力したら、改行タグを入れます。
+        (((prePad + curDay) % 7 == 0) ? "<br/>" : ""));
     }
   }
 
