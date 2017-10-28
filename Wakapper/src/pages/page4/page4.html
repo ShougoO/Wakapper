@@ -3,27 +3,17 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Page Four</ion-title>
+    <ion-title>{{selectedItem}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <!--以下に設置------>
-
-  <!------------------>
-  <!--
   <ion-list>
-    {{showText}}
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item.title)">
       {{item.title}}
       <div class="item-note" item-right>
         {{item.note}}
       </div>
     </button>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
-  -->
 </ion-content>
