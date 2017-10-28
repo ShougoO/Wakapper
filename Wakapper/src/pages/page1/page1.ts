@@ -39,31 +39,19 @@ export class Page1 {
     this.loadMap();
   }
 
+  // 画面が読み込まれた時のみ実行
   loadMap() {
+    // GoogleMapの構築
     this.map = new google.maps.Map(this.mapChild.nativeElement, {
       zoom: 12,
-      center: { lat: 33.9, lng: 130.8 }
+      center: { lat: this.lat, lng: this.lng }
     });
-    /*
-    // Wait the MAP_READY before using any methods.
-    this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
-      alert('Map is ready!');
-
-      // Now you can use all methods safely.
-      this.map.addMarker({
-        title: 'Ionic',
-        icon: 'blue',
-        animation: 'DROP',
-        position: {
-          lat: 43.0741904,
-          lng: -89.3809802
-        }
-      }).then(marker => {
-        marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-          alert('clicked');
-        });
-      });
+    
+    // Markerの設置
+    var marker = new google.maps.Marker({
+      position: { lat: 33.9095253, lng: 130.7500793 },
+      map: this.map,
+      title: 'Test'
     });
-    */
   }
 }

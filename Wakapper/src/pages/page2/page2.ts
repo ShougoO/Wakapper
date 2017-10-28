@@ -9,14 +9,16 @@ import { NavController, NavParams } from 'ionic-angular';
 export class Page2 {
   text: string;
   showText: string;
+  /*
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
-
+  */
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.text = navParams.get("text");
     this.showText = this.text;
    
+    /*
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
     alert(this.selectedItem);
@@ -32,12 +34,14 @@ export class Page2 {
         icon: this.icons[Math.floor(Math.random() * this.icons.length)]
       });
     }
+    */
   }
-
+  /*
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(Page2, {
       item: item
     });
   }
+  */
 }

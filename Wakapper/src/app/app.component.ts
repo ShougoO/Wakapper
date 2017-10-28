@@ -17,6 +17,7 @@ import { DataService } from './data.service';
 })
 
 export class MyApp {
+  position: any = { lat: 33.9144938, lng: 130.7528295 };
   static text: string;
   showText: string;
   
@@ -70,11 +71,12 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-      
+
+      // Page1に移動する際は若松区の座標（緯度(lat),経度(lng)）を渡す
       this.dataService.Text$.subscribe(text => {
           if (text == "Page01") {
               this.showText = "Page1";
-              this.nav.setRoot(Page1, { lat: 130, lng: 33 });
+              this.nav.setRoot(Page1, this.position);
 
           } else if (text == "Page02") {
               this.showText = "Page2";
@@ -91,7 +93,7 @@ export class MyApp {
           } else {
             this.showText = text;
             if (text == "Page1") {
-              this.nav.setRoot(Page1, { lat: 130, lng: 33 });
+              this.nav.setRoot(Page1, this.position);
             } else {
               this.nav.setRoot(this.page.component, { text });
             }
