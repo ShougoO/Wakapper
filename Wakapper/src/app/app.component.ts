@@ -24,7 +24,15 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   
   rootPage: any = HomePage;
-  
+
+  pagesNames: Array<string> = [
+    'ホーム画面',
+    '区内マップ',
+    '掲示板',
+    'イベントカレンダー',
+    '運行表'
+  ];
+
   page1: Array<{ title: string, component: any, name: string }>;
   page2: Array<{ title: string, component: any, name: string }>;
   page3: Array<{ title: string, component: any, name: string }>;
@@ -34,34 +42,33 @@ export class MyApp {
   constructor(public platform: Platform, private dataService: DataService) {
     this.initializeApp();
     
-    
     // used for an example of ngFor and navigation
     this.page1 = [
-        { title: 'Home Page' , component: HomePage, name: 'HomePage' },
-        { title: 'Page Two', component: Page2, name: 'Page2' },
-        { title: 'Page Three', component: Page3, name: 'Page3' },
-        { title: 'Page Four', component: Page4, name: 'Page4' }
+      { title: this.pagesNames[0], component: HomePage, name: 'HomePage' },
+      { title: this.pagesNames[2], component: Page2, name: 'Page2' },
+      { title: this.pagesNames[3], component: Page3, name: 'Page3' },
+      { title: this.pagesNames[4], component: Page4, name: 'Page4' }
     ];
 
     this.page2 = [
-        { title: 'Home Page', component: HomePage, name: 'HomePage' },
-        { title: 'Page One', component: Page1, name: 'Page1' },
-        { title: 'Page Three', component: Page3, name: 'Page3' },
-        { title: 'Page Four', component: Page4, name: 'Page4' }
+      { title: this.pagesNames[0], component: HomePage, name: 'HomePage' },
+      { title: this.pagesNames[1], component: Page1, name: 'Page1' },
+      { title: this.pagesNames[3], component: Page3, name: 'Page3' },
+      { title: this.pagesNames[4], component: Page4, name: 'Page4' }
     ];
 
     this.page3 = [
-        { title: 'Home Page', component: HomePage, name: 'HomePage' },
-        { title: 'Page One', component: Page1, name: 'Page1' },
-        { title: 'Page Two', component: Page2, name: 'Page2' },
-        { title: 'Page Four', component: Page4, name: 'Page4' }
+      { title: this.pagesNames[0], component: HomePage, name: 'HomePage' },
+      { title: this.pagesNames[1], component: Page1, name: 'Page1' },
+      { title: this.pagesNames[2], component: Page2, name: 'Page2' },
+      { title: this.pagesNames[4], component: Page4, name: 'Page4' }
     ];
     
     this.page4 = [
-        { title: 'Home Page', component: HomePage, name: 'HomePage' },
-        { title: 'Page One', component: Page1, name: 'Page1' },
-        { title: 'Page Two', component: Page2, name: 'Page2' },
-        { title: 'Page Three', component: Page3, name: 'Page3' }
+      { title: this.pagesNames[0], component: HomePage, name: 'HomePage' },
+      { title: this.pagesNames[1], component: Page1, name: 'Page1' },
+      { title: this.pagesNames[2], component: Page2, name: 'Page2' },
+      { title: this.pagesNames[3], component: Page3, name: 'Page3' }
     ];
   }
   
