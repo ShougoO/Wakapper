@@ -22277,7 +22277,38 @@ page-home button {
   }
 }
 
+<<<<<<< HEAD
 page-page1 #map {
   width: 100%;
   height: 100%;
+=======
+page-page3 #title {
+  text-align: center;
+  font-size: 50px;
+}
+
+page-page3 #month {
+  text-align: center;
+  font-size: 45px;
+}
+
+page-page3 #content {
+  position: absolute;
+  width: 80%;
+  margin: 10%;
+  font-size: 20pt;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  /*
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ffd800;
+*/
+}
+
+page-page3 #content table {
+  position: relative;
+  width: 70%;
+  right: 5%;
+>>>>>>> 30c7095d4f105b4f30135f2e2881d948b735aeac
 }
