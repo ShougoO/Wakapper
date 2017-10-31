@@ -3,13 +3,17 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Page Two</ion-title>
+    <ion-title>掲示板</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <!--以下に設置------>
-
+  <form action="../../../../../workspace/recv.cgi" method="POST" stype="border: 1px solid black">
+    年代：<input type="text" name="NENDAI" />代
+    <br />
+    <input type="submit">
+  </form>
   <!------------------>
 <!--
   <ion-list>
