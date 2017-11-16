@@ -12,7 +12,7 @@ export class Page2 {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.text = navParams.get("text");
     this.showText = this.text;
