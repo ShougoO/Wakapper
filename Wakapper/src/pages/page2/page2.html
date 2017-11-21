@@ -9,11 +9,11 @@
 
 <ion-content>
   <!--以下に設置------>
-  <form action="../../cgi/recv.cgi" method="POST" class="test_form">
+  <form ion-item class="test_form" (click)="poatURL(../../cgi/recv.cgi)">
     name :
     <input type="text" name="name" />
 
-    <input type="submit" />
+    <input type="submit" item-right />
   </form>
   <!------------------>
 </ion-content>
