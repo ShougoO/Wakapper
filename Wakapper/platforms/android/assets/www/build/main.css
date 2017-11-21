@@ -22282,6 +22282,12 @@ page-page1 #map {
   height: 100%;
 }
 
+page-page2 .test_form {
+  border: 1px solid black;
+  width: 80%;
+  margin: 10%;
+}
+
 page-page3 #title {
   text-align: center;
   font-size: 50px;
