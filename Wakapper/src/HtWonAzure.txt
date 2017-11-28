@@ -1,0 +1,4 @@
+Here is /src.
+1)mkdir input/ & mkdir log/
+2)sudo chown www-data:www-data input/ & log/
+3)chmod a+x /cgi/recv.cgi
