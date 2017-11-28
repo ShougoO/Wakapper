@@ -17,8 +17,9 @@ export class Page2 {
   }
 
   postURL(url) {
-    this.formElement.method = "POST";
-    this.formElement.action = url;
-    this.formElement.submit();
+    //var Form = <HTMLFormElement>this.formElement.nativeElement;
+    this.formElement.nativeElement.method = "POST";
+    this.formElement.nativeElement.action = url;
+    this.formElement.nativeElement.submit();
   }
 }
