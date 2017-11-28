@@ -18,6 +18,7 @@ export class HomePage {
     page: any;
 
     constructor(public navCtrl: NavController, private dataService: DataService) {
+      alert(document.URL);
     }
 
     onLink(url: string) {
