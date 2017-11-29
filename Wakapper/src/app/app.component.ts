@@ -96,7 +96,7 @@ export class MyApp {
           } else if (text == "Page04") {
               this.showText = "Page4";
               this.nav.setRoot(Page4, "Page4");
-
+              
           } else {
             this.showText = text;
             if (text == "Page1") {

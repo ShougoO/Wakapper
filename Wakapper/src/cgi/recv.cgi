@@ -11,5 +11,5 @@ dd bs=$CONTENT_LENGTH > $homd/input/hoge
 # echo "Content-type: text/html"
 # echo ""
 # echo OK!!
-echo "Location: $HTTP_REFERER?aaa"
+echo "Location: $HTTP_REFERER?q=regi"
 echo ""

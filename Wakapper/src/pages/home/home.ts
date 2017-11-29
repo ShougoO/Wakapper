@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { URLSearchParams, QueryEncoder } from '@angular/http';
 
 import { NavController } from 'ionic-angular';
 import { Page1 } from '../page1/page1';
@@ -17,8 +18,18 @@ import { DataService } from '../../app/data.service';
 export class HomePage {
     page: any;
 
-    constructor(public navCtrl: NavController, private dataService: DataService) {
-      alert(document.URL);
+    constructor(public navCtrl: NavController, private dataService: DataService) { }
+
+    //画面表示後、掲示板の登録用のcgiから
+    //パラメータが送られてきた場合(q = regi)
+    //page2へ遷移する
+    ionViewDidEnter() {
+      var Url = document.location.search.substring(1);
+      var A = new URLSearchParams(Url, new QueryEncoder());
+      var B = A.get("q");
+      if (B == "regi") {
+        this.goToPage2();
+      }
     }
 
     onLink(url: string) {
