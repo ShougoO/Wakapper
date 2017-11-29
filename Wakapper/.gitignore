@@ -3,7 +3,6 @@
 
 *~
 *.sw[mnpcod]
-*.log
 *.tmp
 *.tmp.*
 log.txt
